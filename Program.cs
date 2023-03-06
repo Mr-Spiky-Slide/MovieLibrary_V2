@@ -5,14 +5,23 @@
 
  // create instance of Logger
  var logger = LogManager.LoadConfiguration(path).GetCurrentClassLogger();
+string movieFilePath = Directory.GetCurrentDirectory() + "//movies.csv";
+
  logger.Info("Program started");
 
-Movie movie = new Movie
+ MovieFile movieFile = new MovieFile(movieFilePath);
+
+string choice = "";
+ do
  {
-   movieId = 1,
-   title = "Jeff's Killer Movie (2019)",
-   genres = new List<string> { "Action", "Romance", "Comedy" }
- };
+   // display choices to user
+   Console.WriteLine("1) Add Movie");
+   Console.WriteLine("2) Display All Movies");
+   Console.WriteLine("Enter to quit");
+   // input selection
+   choice = Console.ReadLine();
+   logger.Info("User choice: {Choice}", choice);
+ } while (choice == "1" || choice == "2");
+
  logger.Info("Program ended");
 
-Console.WriteLine(movie.Display());
