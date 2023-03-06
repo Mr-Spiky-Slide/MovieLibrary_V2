@@ -14,3 +14,5 @@ Movie movie = new Movie
    genres = new List<string> { "Action", "Romance", "Comedy" }
  };
  logger.Info("Program ended");
+
+Console.WriteLine(movie.Display());
