@@ -73,8 +73,8 @@ do
         string keyword = Console.ReadLine();
         Console.WriteLine($"There are {movieFile.Movies.Where(m => m.title.Contains(keyword)).Count()} movies matching {keyword}");
 
-        var Movies1921 = movieFile.Movies.Where(m => m.title.Contains("(1921)"));
-        foreach (Movie m in Movies1921)
+        var matchingMovies = movieFile.Movies.Where(m => m.title.Contains(keyword));
+        foreach (Movie m in matchingMovies)
         {
             Console.WriteLine($"  {m.title}");
         }
